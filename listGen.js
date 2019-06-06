@@ -20,12 +20,12 @@ module.exports = (pathToHTMLFile) => {
     }
     const hashedList = initialList.reduce(nameToUrl, {});
     const uniquePairs = Object.entries(hashedList);
-    const uniqueListOfPlaysAndUrls = uniquePairs.map(el => {return { name: el[0], url: el[1] }});
+    const uniqueListOfPlaysAndUrls = uniquePairs.map(el => {return { name: el[0], url: el[1] };});
     return uniqueListOfPlaysAndUrls;
   }
 
   const htmlFile = fs.readFileSync(pathToHTMLFile, 'utf8');
-  const api = { uniquePlaysAndUrls: uniqueListOfPlaysAndUrls(playsAndUrls(htmlFile)) };
-  const jsonOfApi = JSON.stringify(api);
-  console.log("hi!");
+  //const api = { uniquePlaysAndUrls: uniqueListOfPlaysAndUrls(playsAndUrls(htmlFile)) };
+  //const jsonOfApi = JSON.stringify(api);
+  return uniqueListOfPlaysAndUrls(playsAndUrls(htmlFile))
 }
