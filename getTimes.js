@@ -11,15 +11,15 @@ module.exports = async (pageUrl) => {
       });
       res.on("end", () => {
         const root = parse(htmlPage);
-        let innerText = "";
+        //let innerText = "";
         try {
-          const times = root
+          const timesTable = root
             .querySelector(".performances")
             .querySelector("tbody")
             .querySelectorAll("tr")
             .map(el => el.querySelectorAll("td"))
             .map(el => `${el[1].text} at ${el[2].text}`);
-          resolve(times);
+          resolve(timesTable);
         } catch (e) {
           resolve(`Couldn't find times.`);
         }
