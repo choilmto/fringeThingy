@@ -25,7 +25,5 @@ module.exports = (pathToHTMLFile) => {
   }
 
   const htmlFile = fs.readFileSync(pathToHTMLFile, 'utf8');
-  //const api = { uniquePlaysAndUrls: uniqueListOfPlaysAndUrls(playsAndUrls(htmlFile)) };
-  //const jsonOfApi = JSON.stringify(api);
   return uniqueListOfPlaysAndUrls(playsAndUrls(htmlFile))
 }
